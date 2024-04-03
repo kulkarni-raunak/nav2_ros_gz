@@ -1,5 +1,10 @@
 # To run simulation 
 
+## Clone this repo
+```
+git clone --recurse-submodules -j8 git@github.com:kulkarni-raunak/nav2_ros_gz.git
+```
+
 ## Inside ws_nav2/src/
 
 ```
