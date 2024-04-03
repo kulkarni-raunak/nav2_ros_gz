@@ -1,0 +1,46 @@
+{
+  "name": "ws_nav2",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "--rm": "true",
+      "--tag": "nav2:latest"
+    }
+  },
+  "runArgs": [
+    "--rm",
+    "-it",
+    "--gpus=all",                                     
+    "--device=/dev/dri",       //for AMD GPU
+    "--env=NVIDIA_DRIVER_CAPABILITIES=all",
+    "-e=DISPLAY",
+    "-e=QT_X11_NO_MITSHM=1",
+    "-e=TERM",
+    "--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+    "--privileged",
+    "--network=host",
+    "--ipc=host",
+    "--pid=host"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}",
+  "mounts": [
+    "source=${localWorkspaceFolder}/.bash_history,target=/home/vscode/.bash_history,type=bind",
+    "source=${localWorkspaceFolder}/.bashrc,target=/home/vscode/.bashrc,type=bind",
+    // "source=${localEnv:HOME}${localEnv:USERPROFILE}/,target=/home/vscode/localusr,type=bind"                           //mount local home in a folder in the container user's home
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/,target=/home/vscode/${localWorkspaceFolderBasename},type=bind",                                     //mount local home in the container user's home   NB: Local .bashrc is in use
+    "type=bind,source=/dev/input,target=/dev/input"                                                                       // bind usb devices i.e., joystick
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-iot.vscode-ros",
+        "twxs.cmake",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "franneck94.c-cpp-runner",
+      ]
+    }
+  }
+}
