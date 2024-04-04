@@ -5,3 +5,7 @@
 	path = src/turtlebot3_simulations
 	url = git@github.com:kulkarni-raunak/turtlebot3_simulations.git
 	branch = brean/feature-gz-sim_garden
+[submodule "src/navigation2"]
+	path = src/navigation2
+	url = git@github.com:kulkarni-raunak/navigation2.git
+	branch = ahcorde/initial_support/gazebo
