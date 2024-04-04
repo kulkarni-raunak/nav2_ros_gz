@@ -11,13 +11,22 @@ RUN apt-get update \
     ros-${ROS_DISTRO}-ros-gzgarden
 
 ## install dependencies
+# libgz-plugin2-dev for gz_ros2_control
+# libsdl-image1.2-dev and libsdl-image-dev for nav2_util
+# ros-${ROS_DISTRO}-test-msgs-dbgsym for nav2_util 
+# ros-${ROS_DISTRO}-robot-localization-dbgsym for nav2_behavior_tree
 RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-joint-state-publisher-gui \
-    ros-${ROS_DISTRO}-navigation2 \
-    ros-${ROS_DISTRO}-nav2-bringup \ 
+    # ros-${ROS_DISTRO}-navigation2 \
+    # ros-${ROS_DISTRO}-nav2-bringup \ 
     ros-${ROS_DISTRO}-turtlebot3 \
     ros-${ROS_DISTRO}-controller-manager-dbgsym \
-    ros-${ROS_DISTRO}-controller-manager
+    ros-${ROS_DISTRO}-controller-manager \
+    libgz-plugin2-dev \
+    ros-${ROS_DISTRO}-test-msgs-dbgsym \
+    ros-${ROS_DISTRO}-robot-localization-dbgsym
+    # libsdl-image1.2-dev \
+    # libsdl2-image-dev
     
 # # install python packages
 # RUN pip3 install \

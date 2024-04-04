@@ -5,7 +5,7 @@
 git clone --recurse-submodules -j8 git@github.com:kulkarni-raunak/nav2_ros_gz.git
 ```
 
-## Inside ws_nav2/src/
+## Inside nav2_ros_gz/
 
 ```
 rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
@@ -14,7 +14,7 @@ rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
 ## Build
 
 ```
-colcon build --symlink-install
+colcon build --symlink-install --packages-skip nav2_system_tests
 ```
 
 ## Launch
