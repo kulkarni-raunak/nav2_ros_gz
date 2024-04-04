@@ -1,3 +1,7 @@
 [submodule "gz_ros2_control"]
 	path = src/gz_ros2_control
 	url = git@github.com:kulkarni-raunak/gz_ros2_control.git
+[submodule "src/turtlebot3_simulations"]
+	path = src/turtlebot3_simulations
+	url = git@github.com:kulkarni-raunak/turtlebot3_simulations.git
+	branch = brean/feature-gz-sim_garden
