@@ -21,3 +21,7 @@ colcon build --symlink-install --packages-skip nav2_system_tests
 ```
 ros2 launch turtlebot3_gz gz_sim.launch.py 
 ```
+
+## TODOs
+
+Follow [migration of gazebos_ros_pkgs to ros_gz guide](https://gazebosim.org/docs/garden/migrating_gazebo_classic_ros2_packages) to tweak the packges related to nav2/navigation2. `Note: May not support Gazebo garden.`
