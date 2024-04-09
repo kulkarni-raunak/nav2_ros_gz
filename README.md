@@ -19,7 +19,7 @@ colcon build --symlink-install --packages-skip nav2_system_tests
 
 ## Launch
 ```
-ros2 launch turtlebot3_gz gz_sim.launch.py 
+ros2 launch nav2_bringup tb3_gz_simulation_launch.py use_gz:=False headless:=False
 ```
 
 ## TODOs
