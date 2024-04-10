@@ -19,7 +19,7 @@ colcon build --symlink-install --packages-skip nav2_system_tests
 
 ## Launch
 ```
-ros2 launch nav2_bringup tb3_gz_simulation_launch.py use_gz:=False headless:=False
+ros2 launch nav2_bringup tb3_gz_simulation_launch.py headless:=False
 ```
 
 ## TODOs
