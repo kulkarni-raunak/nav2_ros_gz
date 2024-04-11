@@ -1,5 +1,5 @@
 {
-  "name": "ws_nav2",
+  "name": "nav2_ros_gz",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
