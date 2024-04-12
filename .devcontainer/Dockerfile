@@ -15,14 +15,33 @@ RUN apt-get update \
 # libsdl-image1.2-dev and libsdl-image-dev for nav2_util
 # ros-${ROS_DISTRO}-test-msgs-dbgsym for nav2_util 
 # ros-${ROS_DISTRO}-robot-localization-dbgsym for nav2_behavior_tree
+# xterm for teleop keyboard shell
+#  gdb & gdbserver -> for debugging ros2 cpp nodes
 RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-joint-state-publisher-gui \
     ros-${ROS_DISTRO}-turtlebot3 \
     ros-${ROS_DISTRO}-controller-manager-dbgsym \
     ros-${ROS_DISTRO}-controller-manager \
-    libgz-plugin2-dev \
+    ros-${ROS_DISTRO}-behaviortree-cpp \
     ros-${ROS_DISTRO}-test-msgs-dbgsym \
-    ros-${ROS_DISTRO}-robot-localization-dbgsym
+    ros-${ROS_DISTRO}-robot-localization-dbgsym \
+    libgz-plugin2-dev \
+    gdb \
+    gdbserver \
+    xterm
+
+
+# install Groot
+RUN cd /home \
+    && wget https://s3.us-west-1.amazonaws.com/download.behaviortree.dev/groot2_linux_installer/Groot2-v1.5.2-linux-installer.run \
+    && chmod +x Groot2-v1.5.2-linux-installer.run \
+    && /home/Groot2-v1.5.2-linux-installer.run in -c --al --root /home/Groot \
+    && echo "alias groot=/home/Groot/bin/groot2" >> /etc/bash.bashrc
+
+
+RUN apt-get install -y \
+    libzmq3-dev \
+    libboost-dev
 
 # Add vscode user with same UID and GID as your host system
 # (copied from https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user#_creating-a-nonroot-user)
@@ -40,18 +59,6 @@ USER $USERNAME
 
 # Add user to video group to allow access to webcam
 RUN sudo usermod --append --groups video $USERNAME
-
-# Update all packages
-RUN sudo apt update & sudo apt upgrade -y
-
-## install dependencies
-# for teleop keyboard shell
-RUN sudo apt install -y xterm   
-
-# gdb & gdbserver -> for debugging ros2 cpp nodes
-RUN sudo apt install -y \
-    gdb \
-    gdbserver
 
 ## install python packages
 

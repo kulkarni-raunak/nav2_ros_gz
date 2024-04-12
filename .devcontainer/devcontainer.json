@@ -39,7 +39,7 @@
         "twxs.cmake",
         "ms-vscode.cpptools",
         "ms-vscode.cpptools-extension-pack",
-        "franneck94.c-cpp-runner",
+        "franneck94.c-cpp-runner"
       ]
     }
   }
