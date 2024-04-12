@@ -28,7 +28,7 @@
   "updateContentCommand": ".devcontainer/update-content-command.sh",
   "postCreateCommand": ".devcontainer/post-create-command.sh",
   "mounts": [
-    // "source=${localWorkspaceFolder}/.bash_history,target=/home/vscode/.bash_history,type=bind",
+    "source=${localWorkspaceFolder}/.bash_history,target=/home/vscode/.bash_history,type=bind",
     // "source=${localWorkspaceFolder}/.bashrc,target=/home/vscode/.bashrc,type=bind",                                           // NB: workspace's .bashrc file is in use
     // "source=${localEnv:HOME}${localEnv:USERPROFILE}/,target=/home/vscode/localusr,type=bind"                           //mount local home in a folder in the container user's home
     // "source=${localEnv:HOME}${localEnv:USERPROFILE}/,target=/home/vscode/,type=bind",                                     //mount local home in the container user's home   NB: Local .bashrc is in use
