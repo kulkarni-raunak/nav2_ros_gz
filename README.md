@@ -4,6 +4,8 @@
 ```
 git clone --recurse-submodules -j8 git@github.com:kulkarni-raunak/nav2_ros_gz.git
 ```
+## Add .bash_history inside nav2_ros_gz/
+`touch .bash_history`
 
 ## Inside nav2_ros_gz/
 
