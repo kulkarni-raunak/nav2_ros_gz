@@ -19,7 +19,7 @@ rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 colcon build --symlink-install --packages-skip nav2_system_tests
 ```
-## Source (already done in the dev container)
+## Source or open another terminal tab (as already sourced in the dev container bashrc)
 ```bash
 source /nav2_ros_gz/install/setup.bash
 ```
