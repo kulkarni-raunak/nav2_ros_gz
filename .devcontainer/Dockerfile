@@ -61,7 +61,7 @@ USER $USERNAME
 RUN sudo usermod --append --groups video $USERNAME
 
 # Update all packages
-RUN sudo apt update & sudo apt upgrade -y
+RUN sudo apt update && sudo apt upgrade -y
 
 ## install python packages
 

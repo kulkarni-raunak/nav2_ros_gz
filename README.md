@@ -7,7 +7,8 @@ git clone --recurse-submodules -j8 git@github.com:kulkarni-raunak/nav2_ros_gz.gi
 ## Add .bash_history inside nav2_ros_gz/
 `touch .bash_history`
 
-## Inside nav2_ros_gz/
+## Install dependencies (already done in the dev container)
+### Inside nav2_ros_gz/ 
 
 ```
 rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
@@ -17,6 +18,10 @@ rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
 
 ```
 colcon build --symlink-install --packages-skip nav2_system_tests
+```
+## Source or open another terminal tab (as already sourced in the dev container bashrc)
+```bash
+source /nav2_ros_gz/install/setup.bash
 ```
 
 ## Launch
