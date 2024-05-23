@@ -9,3 +9,9 @@
 	path = src/navigation2
 	url = git@github.com:kulkarni-raunak/navigation2.git
 	branch = ahcorde/initial_support/gazebo
+[submodule "src/navigation2_tutorials"]
+	path = src/navigation2_tutorials
+	url = git@github.com:kulkarni-raunak/navigation2_tutorials.git
+[submodule "src/BehaviorTree.ROS2"]
+	path = src/BehaviorTree.ROS2
+	url = git@github.com:BehaviorTree/BehaviorTree.ROS2.git

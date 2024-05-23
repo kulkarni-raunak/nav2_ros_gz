@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- Load this in groot through the load pallet command!-->
+<root BTCPP_format="4">
+    <TreeNodesModel>
+      <Action ID="ReceiveFloat" editable="true"/>
+      <Condition ID="Standard_ConditionNode" editable="true"/>
+    </TreeNodesModel>
+    <BehaviorTree ID="Main_Tree">
+    <Sequence>
+      <ReceiveFloat name="A"/>
+      <Standard_ConditionNode name="B"/>
+      <ReceiveFloat name="C"/>
+    </Sequence>
+  </BehaviorTree>
+</root>
