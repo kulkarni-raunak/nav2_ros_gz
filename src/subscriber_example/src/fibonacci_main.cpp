@@ -47,7 +47,7 @@ public:
     for (auto number : wr.result->sequence) {
       ss << number << " ";
     }
-    RCLCPP_INFO(node_->get_logger(), ss.str().c_str());
+    RCLCPP_INFO(logger(), ss.str().c_str());
     return NodeStatus::SUCCESS;
   }
 
@@ -58,7 +58,7 @@ public:
   // If not overridden, it will return FAILURE by default.
   virtual NodeStatus onFailure(ActionNodeErrorCode error) override
   {
-    RCLCPP_ERROR(node_->get_logger(), "Error: %d", error);
+    RCLCPP_ERROR(logger(), "Error: %d", error);
     return NodeStatus::FAILURE;
   }
 
@@ -76,7 +76,7 @@ public:
     for (auto number : feedback->partial_sequence) {
       ss << number << " ";
     }
-    RCLCPP_INFO(node_->get_logger(), ss.str().c_str());
+    RCLCPP_INFO(logger(), ss.str().c_str());
     return NodeStatus::RUNNING;
   }
 };
