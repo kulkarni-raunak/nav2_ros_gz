@@ -7,22 +7,34 @@ git clone --recurse-submodules -j8 git@github.com:kulkarni-raunak/nav2_ros_gz.gi
 ## Add .bash_history inside nav2_ros_gz/
 `touch .bash_history`
 
-## Install dependencies (already done in the dev container)
-### Inside nav2_ros_gz/ 
+## ~~Install dependencies~~ (already done in the dev container)
+### ~~Inside nav2_ros_gz/~~ 
 
+<del>
+  
 ```
 rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
 ```
 
-## Build
+</del>
 
+## Build
+~~Build Everything!!~~ Takes about 30~40 mins!!
+
+<del>
+  
 ```
 colcon build --symlink-install --packages-skip nav2_system_tests
 ```
-## Source or open another terminal tab (as already sourced in the dev container bashrc)
+</del>
+
+
+Now you can only build the package that you made changes to and **save time**. i.e.,
 ```bash
+colcon build --symlink-install --packages-select nav2_bringup
 source /nav2_ros_gz/install/setup.bash
 ```
+> or just open another terminal tab (this WS is already sourced in the dev container's ~/.bashrc)
 
 ## Launch
 ```

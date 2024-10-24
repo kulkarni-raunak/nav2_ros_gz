@@ -30,6 +30,11 @@ RUN apt-get update && apt-get install -y \
     gdbserver \
     xterm
 
+# install latest nav2-humble-garden binaries from github
+ADD https://github.com/ahmadSum1/nav2_ros_gz/releases/latest/download/install.tar.xz /tmp/nav2_humble_garden.tar.xz
+RUN tar xvf /tmp/nav2_humble_garden.tar.xz --one-top-level=/home/nav2_humble_garden \
+    && echo "source /home/nav2_humble_garden/install/setup.bash" >> /etc/bash.bashrc
+    
 
 # install Groot
 RUN cd /home \
